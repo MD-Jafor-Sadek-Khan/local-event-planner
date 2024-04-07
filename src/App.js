@@ -1,10 +1,11 @@
+import EventList from "./Components/eventList/eventList.component"
 
 function App() {
   return (
     <div className="App">
-      hi
+      <EventList></EventList>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
