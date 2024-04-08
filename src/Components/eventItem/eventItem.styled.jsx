@@ -16,14 +16,14 @@ export const BodyContainer = styled.div`
   justify-content: space-between;
   flex-direction: column;
   background-color: rgba(255, 255, 255, 0.9);
-  padding:10px;
+  padding: 10px;
   position: absolute;
   top: 160px;
   left: 0;
   right: 0;
   margin: auto;
-  width:90%;
-  border-radius:5px;
+  width: 90%;
+  border-radius: 5px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 `
 export const CoverImageContainer = styled.div`
@@ -55,5 +55,4 @@ export const FooterItemContainer = styled.div`
   padding: 4px 6px;
   background-color: cream;
   color: #5c5c5c;
-  
 `

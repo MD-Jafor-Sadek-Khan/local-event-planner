@@ -1,4 +1,4 @@
-import { Avatar } from "antd"
+import { Avatar, Typography } from "antd"
 import {
   CalendarTwoTone,
   ClockCircleTwoTone,
@@ -23,6 +23,8 @@ const EventItem = ({
   eventImageUrl,
   companyImageUrl,
 }) => {
+  const { Paragraph } = Typography
+
   return (
     <EventItemContainer
       cover={
@@ -35,7 +37,13 @@ const EventItem = ({
         <MetaDetails
           avatar={<Avatar src={companyImageUrl} />}
           title={title}
-          description={description}
+          description={
+            <Paragraph
+              ellipsis={{ rows: 3, expandable: false, symbol: "more" }}
+            >
+              {description}
+            </Paragraph>
+          }
         />
 
         <FooterContainer>
