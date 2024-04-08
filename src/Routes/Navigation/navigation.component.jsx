@@ -1,70 +1,29 @@
-import { useState } from "react"
 import { Link } from "react-router-dom"
-import { Layout, Menu, Input } from "antd"
+import { Menu } from "antd"
 import { MenuOutlined, UserOutlined } from "@ant-design/icons"
 import { appMenuItems, userMenuItems } from "../../Utils/navigation.utils"
-
-const { Header } = Layout
-const { Search } = Input
+import {
+  Logo,
+  LogoContainer,
+  MenuContainer,
+  NavigationContainer,
+  OverFlowContainer,
+} from "./navigation.styled"
 
 const Navigation = () => {
-  const [loading, setLoading] = useState(false)
-
-  const handleSearch = (value) => {
-    setLoading(true)
-    setTimeout(() => {
-      console.log("Searching for:", value)
-      setLoading(false)
-    }, 1000)
-  }
   return (
-    <Header
-      style={{
-        position: "sticky",
-        top: 0,
-        zIndex: 1,
-        width: "100%",
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "space-between",
-        padding: "20px",
-      }}
-    >
-      <div style={{ flex: 1 }}>
-        <h1 style={{ color: "white" }}>Logo</h1>
-      </div>
+    <NavigationContainer>
+      <LogoContainer>
+        <Logo>Logo</Logo>
+      </LogoContainer>
 
-      {/* <Search
-        placeholder="input search loading with enterButton"
-        loading={loading}
-        enterButton
-        style={{ flex: 1, justifyContent: "flex-end", minWidth: 0 }}
-        onSearch={handleSearch}
-      /> */}
-
-      <Menu
-        theme="dark"
+      <MenuContainer
+        justifyContent="center"
         mode="horizontal"
-        style={{
-          flex: 1,
-          justifyContent: "center",
-          alignItems: "center",
-          minWidth: 0,
-        }}
         overflowedIndicator={
-          <span
-            style={{
-              display: "flex",
-              boxShadow: "inset 0 0 5px rgba(255, 255, 255, 0.5)",
-              alignItems: "center",
-              borderRadius: "8px",
-              justifyContent: "center",
-              fontSize: "12px",
-              padding: "12px 22px",
-            }}
-          >
+          <OverFlowContainer padding="12px 22px" borderRadius={8}>
             <MenuOutlined />
-          </span>
+          </OverFlowContainer>
         }
       >
         {appMenuItems.map((menuItem) => {
@@ -77,30 +36,15 @@ const Navigation = () => {
             </Menu.Item>
           )
         })}
-      </Menu>
+      </MenuContainer>
 
-      <Menu
-        theme="dark"
+      <MenuContainer
+        justifyContent="flex-end"
         mode="horizontal"
-        style={{
-          flex: 1,
-          justifyContent: "flex-end",
-          alignItems: "center",
-          minWidth: 0,
-        }}
         overflowedIndicator={
-          <span
-            style={{
-              display: "flex",
-              boxShadow: "inset 0 0 5px rgba(255, 255, 255, 0.5)",
-              alignItems: "center",
-              borderRadius: "50px",
-              justifyContent: "center",
-              padding: "15px 15px",
-            }}
-          >
+          <OverFlowContainer padding="15px 15px" borderRadius={50}>
             <UserOutlined />
-          </span>
+          </OverFlowContainer>
         }
       >
         {userMenuItems.map((menuItem) => {
@@ -111,8 +55,8 @@ const Navigation = () => {
             </Menu.Item>
           )
         })}
-      </Menu>
-    </Header>
+      </MenuContainer>
+    </NavigationContainer>
   )
 }
 
