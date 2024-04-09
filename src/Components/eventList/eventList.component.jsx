@@ -1,11 +1,12 @@
 import React, { useState } from "react"
 import data from "../../data"
-import EventItem from "../eventItem/eventItem.component"
-import { Row, Col, Pagination } from "antd"
+import EventItemCard from "../eventItemCard/eventItemCard.component"
+import { Row, Col } from "antd"
+import { EventListContainer, PaginationContainer } from "./eventList.styled"
 
 const EventList = () => {
   const [currentPage, setCurrentPage] = useState(1)
-  const [itemsPerPage] = useState(6)
+  const [itemsPerPage, setItemsPerPage] = useState(6)
   const indexOfLastItem = currentPage * itemsPerPage
   const indexOfFirstItem = indexOfLastItem - itemsPerPage
   const currentItems = data.slice(indexOfFirstItem, indexOfLastItem)
@@ -14,8 +15,12 @@ const EventList = () => {
     setCurrentPage(page)
   }
 
+  const handleSizeChange = (current, size) => {
+    setItemsPerPage(size)
+  }
+
   return (
-    <div>
+    <EventListContainer>
       <Row justify="center" gutter={[16, { xs: 0, sm: 0, md: 24, lg: 32 }]}>
         {currentItems.map((item) => (
           <Col
@@ -28,24 +33,22 @@ const EventList = () => {
             key={item.id}
             span={6}
           >
-            <EventItem {...item} />
+            <EventItemCard {...item} />
           </Col>
         ))}
       </Row>
-      <Pagination
+
+      <PaginationContainer
         total={data.length}
         pageSize={itemsPerPage}
         current={currentPage}
         onChange={handlePageChange}
         showSizeChanger
+        onShowSizeChange={handleSizeChange}
         showQuickJumper
-        showTotal={(total) => {
-          return <strong>Total {total} items</strong>
-        }}
-        style={{ textAlign: "center" }}
+        responsive
       />
-    </div>
+    </EventListContainer>
   )
 }
-
 export default EventList

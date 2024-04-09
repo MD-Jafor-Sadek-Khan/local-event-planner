@@ -1,7 +1,13 @@
 import styled from "styled-components"
 import { Layout, Menu, Input } from "antd"
+import { Link } from "react-router-dom"
 
 const { Header } = Layout
+
+export const LayoutContainer = styled(Layout)`
+  display:flex;
+`
+
 
 export const NavigationContainer = styled(Header)`
   position: sticky;
@@ -12,8 +18,9 @@ export const NavigationContainer = styled(Header)`
   align-items: center;
   justify-content: space-between;
   padding: 20px;
+  
 `
-export const LogoContainer = styled.div`
+export const LogoContainer = styled(Link)`
   flex: 1;
 `
 

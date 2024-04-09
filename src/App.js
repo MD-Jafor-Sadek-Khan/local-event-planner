@@ -1,15 +1,17 @@
 import EventList from "./Components/eventList/eventList.component"
+import Events from "./Routes/Events/events.component"
+import Home from "./Routes/Home/home.component"
 import Navigation from "./Routes/Navigation/navigation.component"
-import {Layout} from 'antd'
-
-
+import { Routes, Route } from "react-router-dom"
 
 function App() {
   return (
-    <Layout style={{ display: "flex" }}>
-      <Navigation></Navigation>
-      <EventList ></EventList>
-    </Layout>
+    <Routes>
+      <Route path="/" element={<Navigation />}>
+        <Route index element={<Home />} />
+        <Route path="events/*" element={<Events />} />
+      </Route>
+    </Routes>
   )
 }
 

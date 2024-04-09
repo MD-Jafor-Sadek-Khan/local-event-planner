@@ -19,19 +19,19 @@ export const appMenuItems = [
     key: "2",
     label: "Events",
     icon: <CommentOutlined />,
-    route: "/events", // Corrected route for Events
+    route: "events/", 
   },
   {
     key: "3",
     label: "Schedules",
     icon: <CalendarOutlined />,
-    route: "/schedules", // Corrected route for Schedules
+    route: "/schedules", 
   },
   {
-    key: "4", // Changed key to "4" to avoid duplication
+    key: "4",
     label: "Create Event",
     icon: <FormOutlined />,
-    route: "/create-event", // Corrected route for Create Event
+    route: "/create-event", 
   },
 ]
 
@@ -40,13 +40,13 @@ export const userMenuItems = [
     key: "1",
     label: "LogIn",
     icon: <HomeOutlined />,
-    route: "/login", // Corrected route for LogIn
+    route: "/login", 
   },
   {
     key: "2",
     label: "SignUp",
     icon: <UserOutlined />,
-    route: "/signup", // Corrected route for SignUp
+    route: "/signup", 
   },
   {
     key: "3",
