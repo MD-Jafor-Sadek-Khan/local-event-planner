@@ -8,6 +8,7 @@ export const EventItemContainer = styled(Card)`
   height: 340px;
   border: 0;
   position: relative;
+  
 `
 
 export const BodyContainer = styled.div`

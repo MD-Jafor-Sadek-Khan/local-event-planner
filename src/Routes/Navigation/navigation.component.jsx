@@ -20,10 +20,10 @@ const Navigation = () => {
         </LogoContainer>
 
         <MenuContainer
-          justifyContent="center"
+          justifycontent="center"
           mode="horizontal"
           overflowedIndicator={
-            <OverFlowContainer padding="12px 22px" borderRadius={8}>
+            <OverFlowContainer padding="12px 22px" borderradius={8}>
               <MenuOutlined />
             </OverFlowContainer>
           }
@@ -41,10 +41,10 @@ const Navigation = () => {
         </MenuContainer>
 
         <MenuContainer
-          justifyContent="flex-end"
+          justifycontent="flex-end"
           mode="horizontal"
           overflowedIndicator={
-            <OverFlowContainer padding="15px 15px" borderRadius={50}>
+            <OverFlowContainer padding="15px 15px" borderradius={50}>
               <UserOutlined />
             </OverFlowContainer>
           }
