@@ -1,43 +1,39 @@
 import { Link, Outlet } from "react-router-dom"
-import { Menu } from "antd"
 import { MenuOutlined, UserOutlined } from "@ant-design/icons"
 import { appMenuItems, userMenuItems } from "../../Utils/navigation.utils"
 import {
   AppMenuContainer,
-  AppMenuOverFlowContainer,
   LayoutContainer,
   Logo,
-  LogoContainer,
   NavigationContainer,
+  OverFlowContainer,
   UserMenuContainer,
-  UserMenuOverFlowContainer,
 } from "./navigation.styled"
 
 const Navigation = () => {
   return (
     <LayoutContainer>
       <NavigationContainer>
-        <LogoContainer to={"/"}>
-          <Logo>Logo</Logo>
-        </LogoContainer>
-
         <AppMenuContainer
           mode="horizontal"
           items={appMenuItems}
           overflowedIndicator={
-            <AppMenuOverFlowContainer>
+            <OverFlowContainer>
               <MenuOutlined />
-            </AppMenuOverFlowContainer>
+            </OverFlowContainer>
           }
         />
+        <Link to={"/"}>
+          <Logo>Logo</Logo>
+        </Link>
 
         <UserMenuContainer
           items={userMenuItems}
           mode="horizontal"
           overflowedIndicator={
-            <UserMenuOverFlowContainer>
+            <OverFlowContainer>
               <UserOutlined />
-            </UserMenuOverFlowContainer>
+            </OverFlowContainer>
           }
         />
       </NavigationContainer>

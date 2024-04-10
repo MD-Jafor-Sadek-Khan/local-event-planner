@@ -16,10 +16,7 @@ export const NavigationContainer = styled(Header)`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 20px;
-`
-export const LogoContainer = styled(Link)`
-  flex: 1;
+  padding: 20px 0;
 `
 
 export const Logo = styled.h1`
@@ -28,7 +25,8 @@ export const Logo = styled.h1`
 
 export const AppMenuContainer = styled(Menu)`
   flex: 1;
-  justify-content: "center";
+  justify-content: flex-end;
+  flex-direction: row-reverse;
   align-items: center;
   min-width: 0;
 `
@@ -37,20 +35,16 @@ Menu.defaultProps = {
 }
 
 export const UserMenuContainer = styled(AppMenuContainer)`
-  justify-content: "flex-end";
+  justify-content: flex-end;
+  flex-direction: row;
 `
 
-export const AppMenuOverFlowContainer = styled.div`
+export const OverFlowContainer = styled.div`
   display: flex;
   box-shadow: inset 0 0 5px rgba(255, 255, 255, 0.5);
   align-items: center;
-  border-radius: 8px;
+  border-radius: 50px;
   justify-content: center;
   font-size: 12px;
-  padding: 12px 22px;
-`
-
-export const UserMenuOverFlowContainer = styled(AppMenuOverFlowContainer)`
-  border-radius: 50px;
-  padding: 15px 15px;
+  padding: 20px 20px;
 `
