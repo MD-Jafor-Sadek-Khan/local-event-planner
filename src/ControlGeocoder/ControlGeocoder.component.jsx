@@ -6,28 +6,25 @@ import L from "leaflet"
 
 import customIcon from "../Utils/Leaflet/icon"
 
-const ControlGeocoder = ({ positionInfo }) => {
+const ControlGeocoder = ({ address }) => {
   const map = useMap()
 
   useEffect(() => {
     var geocoder = L.Control.Geocoder.nominatim()
-    const address = positionInfo.address
     if (address) {
-      geocoder.geocode(address, (resultArray) => {
-        if (resultArray.length > 0) {
-          const result = resultArray[0]
-          const latlng = result.center
+      geocoder.geocode(address, (locationArray) => {
+        if (locationArray.length) {
+          const { center, name, bbox } = locationArray[0]
+          const latlng = center
 
-          L.marker(latlng, { icon: customIcon })
-            .addTo(map)
-            .bindPopup(result.name)
-          map.fitBounds(result.bbox)
+          L.marker(latlng, { icon: customIcon }).addTo(map).bindPopup(name)
+          map.fitBounds(bbox)
         }
       })
     }
-  }, [positionInfo])
+  }, [address])
 
-  return null
+  return <></>
 }
 
 export default ControlGeocoder

@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import data from "../../data"
+import {eventData} from "../../data"
 import EventItemCard from "../eventItemCard/eventItemCard.component"
 import { Row, Col } from "antd"
 import { EventListContainer, PaginationContainer } from "./eventList.styled"
@@ -9,7 +9,8 @@ const EventList = () => {
   const [itemsPerPage, setItemsPerPage] = useState(6)
   const indexOfLastItem = currentPage * itemsPerPage
   const indexOfFirstItem = indexOfLastItem - itemsPerPage
-  const currentItems = data.slice(indexOfFirstItem, indexOfLastItem)
+  const currentItems = eventData.slice(indexOfFirstItem, indexOfLastItem)
+  const eventCount = eventData.length
 
   const handlePageChange = (page) => {
     setCurrentPage(page)
@@ -39,7 +40,7 @@ const EventList = () => {
       </Row>
 
       <PaginationContainer
-        total={data.length}
+        total={eventCount}
         pageSize={itemsPerPage}
         current={currentPage}
         onChange={handlePageChange}

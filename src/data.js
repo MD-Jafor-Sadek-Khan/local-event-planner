@@ -1,4 +1,57 @@
-const data = [
+export const userData = [{
+  "id": 1,
+  "first_name": "Elwin",
+  "last_name": "Babbe",
+  "email": "ebabbe0@latimes.com",
+  "gender": "Male",
+  "phone": "+62 900 373 6754",
+  "joined": "2023-07-25",
+  "userEvents": null,
+  "attendingEvents": null
+}, {
+  "id": 2,
+  "first_name": "Brittne",
+  "last_name": "Garbett",
+  "email": "bgarbett1@smugmug.com",
+  "gender": "Female",
+  "phone": "+86 495 955 7673",
+  "joined": "2023-10-30",
+  "userEvents": null,
+  "attendingEvents": null
+}, {
+  "id": 3,
+  "first_name": "Gun",
+  "last_name": "Wapplington",
+  "email": "gwapplington2@naver.com",
+  "gender": "Male",
+  "phone": "+63 363 449 1117",
+  "joined": "2023-06-08",
+  "userEvents": null,
+  "attendingEvents": null
+}, {
+  "id": 4,
+  "first_name": "Kennith",
+  "last_name": "Maulin",
+  "email": "kmaulin3@plala.or.jp",
+  "gender": "Male",
+  "phone": "+7 499 442 6029",
+  "joined": "2023-12-13",
+  "userEvents": null,
+  "attendingEvents": null
+}, {
+  "id": 5,
+  "first_name": "Gustie",
+  "last_name": "Feltham",
+  "email": "gfeltham4@wired.com",
+  "gender": "Female",
+  "phone": "+221 969 567 5280",
+  "joined": "2023-06-12",
+  "userEvents": null,
+  "attendingEvents": null
+}]
+
+
+export const eventData = [
   {
     id: 1,
     title: "Edgetag",
@@ -1072,4 +1125,3 @@ const data = [
     companyImageUrl: "http://dummyimage.com/100x100.png/5fa2dd/ffffff",
   },
 ]
-export default data

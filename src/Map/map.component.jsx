@@ -2,7 +2,7 @@ import { useState, useEffect } from "react"
 import { MapContainer, TileLayer } from "react-leaflet"
 import ControlGeocoder from "../ControlGeocoder/ControlGeocoder.component"
 
-const Map = ({ positionInfo, mapType }) => {
+const Map = ({ address, activeMapUrl }) => {
   const [latLng, setLatLng] = useState({
     lat: 0.0,
     lng: 0.0,
@@ -27,11 +27,13 @@ const Map = ({ positionInfo, mapType }) => {
   }, [setLatLng])
 
   return (
-    <MapContainer center={[latLng.lat, latLng.lng]} zoom={13}>
-      <TileLayer url={`${mapType}`} />
+    <div id="map">
+      <MapContainer center={[latLng.lat, latLng.lng]} zoom={13}>
+        <TileLayer url={`${activeMapUrl}`} />
 
-      <ControlGeocoder positionInfo={positionInfo} />
-    </MapContainer>
+        <ControlGeocoder address={address} />
+      </MapContainer>
+    </div>
   )
 }
 
