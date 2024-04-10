@@ -1,9 +1,21 @@
 import data from "../../data"
+import mapType from '../../Utils/mapType.utils'
 import { useParams } from "react-router-dom"
 import "leaflet/dist/leaflet.css"
 import Map from "../../Map/map.component"
-import { Card, Button, Carousel, Flex } from "antd"
-import { Fragment, useState } from "react"
+import { Card } from "antd"
+import { useState } from "react"
+import {
+  ButtonContainer,
+  CardDescriptionContainer,
+  CompanyImage,
+  EventDetailsCard,
+  EventDetailsContainer,
+  EventImage,
+  MapContainerCard,
+  MapDescription,
+  MapDescriptionContainer,
+} from "./eventItemDetails.styled"
 
 const EventItemDetails = () => {
   const [activeMapType, setActiveMapType] = useState("normalView")
@@ -12,12 +24,7 @@ const EventItemDetails = () => {
   const eventDetails = data.find((item) => item.id === parseInt(eventId))
   const address = { address: eventDetails.location }
 
-  const mapType = {
-    sateliteView:
-      "https://tiles.stadiamaps.com/tiles/alidade_satellite/{z}/{x}/{y}{r}.png",
 
-    normalView: "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
-  }
   const selectedMapType = (type) => {
     return mapType[type]
   }
@@ -29,90 +36,58 @@ const EventItemDetails = () => {
   }
 
   return (
-    <div
-      style={{
-        display: "flex",
-        justifyContent: "space-between",
-        alignItems: "start",
-        padding: "40px 30px",
-      }}
-    >
-      <Card
+    <EventDetailsContainer>
+      <EventDetailsCard
         title={`Event: ${eventDetails.title}`}
         avatar={eventDetails.companyImageUrl}
         hoverable
-        style={{ width: "51%", borderRadius: "30px" }}
         cover={
-          <img
+          <EventImage
             src={eventDetails.eventImageUrl}
             alt={`${eventDetails.eventImageUrl}`}
-            style={{
-              objectFit: "cover",
-              width: "100%",
-              height: "50vh",
-              padding: "20px 30px",
-            }}
           />
         }
       >
-        <div
-          style={{
-            display: "flex",
-            justifyContent: "space-between",
-            alignItems: "flex-start",
-          }}
-        >
+        <CardDescriptionContainer>
           <Card.Meta
             avatar={
-              <img
+              <CompanyImage
                 src={eventDetails.companyImageUrl}
                 alt={eventDetails.companyImageUrl}
-                style={{
-                  width: "110px",
-                  height: "110px",
-                  objectFit: "cover",
-                  borderRadius: "100px",
-                }}
               />
             }
           />
           <div>{eventDetails.description}</div>
-        </div>
-      </Card>
+        </CardDescriptionContainer>
+      </EventDetailsCard>
 
-      <Card
-        hoverable
-        style={{ width: "47%", textAlign: "center", borderRadius: "30px", zIndex:0 }}
-      >
+      <MapContainerCard hoverable>
         <div id="map">
           <Map positionInfo={address} mapType={mapTypeVal} />
         </div>
-        <div style={{ display: "flex", margin: "20px 20px" }}>
-          <Card.Meta
+        <MapDescriptionContainer>
+          <MapDescription
             title={`Location: ${eventDetails.location}`}
             description={`Date: ${eventDetails.date}
             || Time: ${eventDetails.time}`}
-            style={{ margin: "0 20px 0 0" }}
           />
-          <Button
+          <ButtonContainer
             value="sateliteView"
             onClick={handleMapTypeChange}
             size="large"
-            style={{ margin: "10px 7px" }}
           >
             Satelite View
-          </Button>
-          <Button
-            style={{ margin: "10px 7px" }}
+          </ButtonContainer>
+          <ButtonContainer
             value="normalView"
             onClick={handleMapTypeChange}
             size="large"
           >
             Normal View
-          </Button>
-        </div>
-      </Card>
-    </div>
+          </ButtonContainer>
+        </MapDescriptionContainer>
+      </MapContainerCard>
+    </EventDetailsContainer>
   )
 }
 
