@@ -2,7 +2,7 @@ import { styled } from "styled-components"
 import { Pagination } from "antd"
 
 export const EventListContainer = styled.div`
-  padding: 50px 40px;
+  padding: 40px 30px;
 `
 
 export const PaginationContainer = styled(Pagination)`
