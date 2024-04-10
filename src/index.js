@@ -5,15 +5,19 @@ import ReactDOM from "react-dom/client"
 import reportWebVitals from "./reportWebVitals"
 import App from "./App"
 import AntDesignConfig from "./Utils/AntDesign/antDesignConfig.utils"
+import { Provider } from "react-redux"
+import { store } from "./store/store"
 
 const root = ReactDOM.createRoot(document.getElementById("root"))
 root.render(
   <React.StrictMode>
-    <BrowserRouter>
-      <AntDesignConfig>
-        <App />
-      </AntDesignConfig>
-    </BrowserRouter>
+    <Provider store={store}>
+      <BrowserRouter>
+        <AntDesignConfig>
+          <App />
+        </AntDesignConfig>
+      </BrowserRouter>
+    </Provider>
   </React.StrictMode>
 )
 
