@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import { Layout, Menu, Input } from "antd"
+import { Layout, Menu } from "antd"
 import { Link } from "react-router-dom"
 
 const { Header } = Layout
@@ -25,23 +25,32 @@ export const LogoContainer = styled(Link)`
 export const Logo = styled.h1`
   color: white;
 `
-export const OverFlowContainer = styled.div`
+
+export const AppMenuContainer = styled(Menu)`
+  flex: 1;
+  justify-content: "center";
+  align-items: center;
+  min-width: 0;
+`
+Menu.defaultProps = {
+  theme: "dark",
+}
+
+export const UserMenuContainer = styled(AppMenuContainer)`
+  justify-content: "flex-end";
+`
+
+export const AppMenuOverFlowContainer = styled.div`
   display: flex;
   box-shadow: inset 0 0 5px rgba(255, 255, 255, 0.5);
   align-items: center;
-  border-radius: ${({ borderradius }) => `${borderradius}px`};
+  border-radius: 8px;
   justify-content: center;
   font-size: 12px;
-  padding: ${({ padding }) => padding};
+  padding: 12px 22px;
 `
 
-Menu.defaultProps = {
-  theme: "dark",
-  size: "medium",
-}
-export const MenuContainer = styled(Menu)`
-  flex: 1;
-  justify-content: ${({ justifycontent }) => justifycontent};
-  align-items: center;
-  min-width: 0;
+export const UserMenuOverFlowContainer = styled(AppMenuOverFlowContainer)`
+  border-radius: 50px;
+  padding: 15px 15px;
 `

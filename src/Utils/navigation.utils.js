@@ -5,61 +5,51 @@ import {
   CalendarOutlined,
   FormOutlined,
   PoweroffOutlined,
-
 } from "@ant-design/icons"
-import {Link} from 'react-router-dom'
-
+import { Link } from "react-router-dom"
 
 export const appMenuItems = [
   {
     key: "1",
-    label: "Home",
+    label: <Link to={"/"}>Home</Link>,
     icon: <HomeOutlined />,
-    route: "/",
   },
   {
     key: "2",
-    label: "Events",
+    label: <Link to={"events/"}>Events</Link>,
     icon: <CommentOutlined />,
-    route: "events/", 
   },
   {
     key: "3",
-    label: "Schedules",
+    label: <Link to={"/schedules"}>Schedules</Link>,
     icon: <CalendarOutlined />,
-    route: "/schedules", 
   },
   {
     key: "4",
-    label: "Create Event",
+    label: <Link to={"/create-event"}>Create Event</Link>,
     icon: <FormOutlined />,
-    route: "/create-event", 
   },
 ]
 
 export const userMenuItems = [
   {
     key: "1",
-    label: "LogIn",
+    label: <Link to={"/login"}>LogIn</Link>,
     icon: <HomeOutlined />,
-    route: "/login", 
   },
   {
     key: "2",
-    label: "SignUp",
+    label: <Link to={"/signup"}>SignUp</Link>,
     icon: <UserOutlined />,
-    route: "/signup", 
   },
   {
     key: "3",
-    label: "Profile",
+    label: <Link to={"/profile"}>Profile</Link>,
     icon: <UserOutlined />,
-    route: "/profile",
   },
   {
     key: "4",
-    label: "LogOut",
+    label: <Link to={"/logout"}>LogOut</Link>,
     icon: <PoweroffOutlined />,
-    route: "/logout",
   },
 ]
