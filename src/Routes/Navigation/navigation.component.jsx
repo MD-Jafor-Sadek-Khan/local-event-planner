@@ -5,10 +5,12 @@ import {
   AppMenuContainer,
   LayoutContainer,
   Logo,
+  LogoContainer,
   NavigationContainer,
   OverFlowContainer,
   UserMenuContainer,
 } from "./navigation.styled"
+import logo from "../../assets/icons/appLogo.svg"
 
 const Navigation = () => {
   return (
@@ -23,9 +25,9 @@ const Navigation = () => {
             </OverFlowContainer>
           }
         />
-        <Link to={"/"}>
-          <Logo>Logo</Logo>
-        </Link>
+        <LogoContainer to={"/"}>
+          <Logo src={logo} />
+        </LogoContainer>
 
         <UserMenuContainer
           items={userMenuItems}

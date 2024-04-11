@@ -19,8 +19,19 @@ export const NavigationContainer = styled(Header)`
   padding: 20px 0;
 `
 
-export const Logo = styled.h1`
-  color: white;
+export const LogoContainer = styled(Link)`
+  object-fit: cover;
+  width: 30%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
+  align-self: center;
+`
+export const Logo = styled.img`
+  object-fit: cover;
+  width: 70px;
+  height: 70px;
 `
 
 export const AppMenuContainer = styled(Menu)`

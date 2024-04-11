@@ -2,7 +2,11 @@ import React, { useState } from "react"
 import { eventData } from "../../data"
 import EventItemCard from "../eventItemCard/eventItemCard.component"
 import { Row, Col } from "antd"
-import { EventListContainer, PaginationContainer } from "./eventList.styled"
+import {
+  EventListContainer,
+  PaginationContainer,
+  TitleContainer,
+} from "./eventList.styled"
 
 const EventList = () => {
   const [currentPage, setCurrentPage] = useState(1)
@@ -22,6 +26,7 @@ const EventList = () => {
 
   return (
     <EventListContainer>
+      <TitleContainer>Events</TitleContainer>
       <Row justify="center" gutter={[16, { xs: 0, sm: 0, md: 24, lg: 32 }]}>
         {currentItems.map((item) => (
           <Col
