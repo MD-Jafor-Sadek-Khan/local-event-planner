@@ -1,4 +1,4 @@
-import { Avatar, Typography } from "antd"
+import { Avatar, Typography, ConfigProvider } from "antd"
 import {
   CalendarTwoTone,
   ClockCircleTwoTone,
@@ -23,48 +23,62 @@ const EventItemCard = ({
   description,
   eventImageUrl,
   companyImageUrl,
-  id
+  id,
 }) => {
   const { Paragraph } = Typography
 
   return (
     <Link to={`${id}`}>
-      <EventItemContainer
-        cover={
-          <CoverImageContainer>
-            <CoverImage alt="example" src={eventImageUrl} />
-          </CoverImageContainer>
-        }
+      <ConfigProvider
+        theme={{
+          token: {
+            colorBgContainer: "transparent",
+          },
+        }}
       >
-        <BodyContainer>
-          <MetaDetails
-            avatar={<Avatar src={companyImageUrl} />}
-            title={title}
-            description={
-              <Paragraph
-                ellipsis={{ rows: 3, expandable: false, symbol: "more" }}
-              >
-                {description}
-              </Paragraph>
-            }
-          />
+        <EventItemContainer
+          hoverable
+          cover={
+            <CoverImageContainer>
+              <CoverImage alt={`${title} event`} src={eventImageUrl} />
+            </CoverImageContainer>
+          }
+        >
+          <BodyContainer>
+            <MetaDetails
+              avatar={
+                <Avatar
+                  src={companyImageUrl}
+                  alt={`${title} events organizer `}
+                />
+              }
+              title={title}
+              description={
+                <Paragraph
+                  ellipsis={{ rows: 3, expandable: false, symbol: "more" }}
+                >
+                  {description}
+                </Paragraph>
+              }
+            />
 
-          <FooterContainer>
-            <FooterItemContainer>
-              <EnvironmentTwoTone />
-              &nbsp;{location}
-            </FooterItemContainer>
-            <FooterItemContainer>
-              <ClockCircleTwoTone />
-              &nbsp;{time}
-            </FooterItemContainer>
-            <FooterItemContainer>
-              <CalendarTwoTone />
-              &nbsp; {date}
-            </FooterItemContainer>
-          </FooterContainer>
-        </BodyContainer>
-      </EventItemContainer>
+            <FooterContainer>
+              <FooterItemContainer>
+                <EnvironmentTwoTone />
+                &nbsp;{location}
+              </FooterItemContainer>
+              <FooterItemContainer>
+                <ClockCircleTwoTone />
+                &nbsp;{time}
+              </FooterItemContainer>
+              <FooterItemContainer>
+                <CalendarTwoTone />
+                &nbsp; {date}
+              </FooterItemContainer>
+            </FooterContainer>
+          </BodyContainer>
+        </EventItemContainer>
+      </ConfigProvider>
     </Link>
   )
 }

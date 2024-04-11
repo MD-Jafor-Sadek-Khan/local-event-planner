@@ -1,55 +1,60 @@
-export const userData = [{
-  "id": 1,
-  "first_name": "Elwin",
-  "last_name": "Babbe",
-  "email": "ebabbe0@latimes.com",
-  "gender": "Male",
-  "phone": "+62 900 373 6754",
-  "joined": "2023-07-25",
-  "userEvents": null,
-  "attendingEvents": null
-}, {
-  "id": 2,
-  "first_name": "Brittne",
-  "last_name": "Garbett",
-  "email": "bgarbett1@smugmug.com",
-  "gender": "Female",
-  "phone": "+86 495 955 7673",
-  "joined": "2023-10-30",
-  "userEvents": null,
-  "attendingEvents": null
-}, {
-  "id": 3,
-  "first_name": "Gun",
-  "last_name": "Wapplington",
-  "email": "gwapplington2@naver.com",
-  "gender": "Male",
-  "phone": "+63 363 449 1117",
-  "joined": "2023-06-08",
-  "userEvents": null,
-  "attendingEvents": null
-}, {
-  "id": 4,
-  "first_name": "Kennith",
-  "last_name": "Maulin",
-  "email": "kmaulin3@plala.or.jp",
-  "gender": "Male",
-  "phone": "+7 499 442 6029",
-  "joined": "2023-12-13",
-  "userEvents": null,
-  "attendingEvents": null
-}, {
-  "id": 5,
-  "first_name": "Gustie",
-  "last_name": "Feltham",
-  "email": "gfeltham4@wired.com",
-  "gender": "Female",
-  "phone": "+221 969 567 5280",
-  "joined": "2023-06-12",
-  "userEvents": null,
-  "attendingEvents": null
-}]
-
+export const userData = [
+  {
+    id: 1,
+    first_name: "Elwin",
+    last_name: "Babbe",
+    email: "ebabbe0@latimes.com",
+    gender: "Male",
+    phone: "+62 900 373 6754",
+    joined: "2023-07-25",
+    userEvents: null,
+    attendingEvents: null,
+  },
+  {
+    id: 2,
+    first_name: "Brittne",
+    last_name: "Garbett",
+    email: "bgarbett1@smugmug.com",
+    gender: "Female",
+    phone: "+86 495 955 7673",
+    joined: "2023-10-30",
+    userEvents: null,
+    attendingEvents: null,
+  },
+  {
+    id: 3,
+    first_name: "Gun",
+    last_name: "Wapplington",
+    email: "gwapplington2@naver.com",
+    gender: "Male",
+    phone: "+63 363 449 1117",
+    joined: "2023-06-08",
+    userEvents: null,
+    attendingEvents: null,
+  },
+  {
+    id: 4,
+    first_name: "Kennith",
+    last_name: "Maulin",
+    email: "kmaulin3@plala.or.jp",
+    gender: "Male",
+    phone: "+7 499 442 6029",
+    joined: "2023-12-13",
+    userEvents: null,
+    attendingEvents: null,
+  },
+  {
+    id: 5,
+    first_name: "Gustie",
+    last_name: "Feltham",
+    email: "gfeltham4@wired.com",
+    gender: "Female",
+    phone: "+221 969 567 5280",
+    joined: "2023-06-12",
+    userEvents: null,
+    attendingEvents: null,
+  },
+]
 
 export const eventData = [
   {
@@ -62,7 +67,8 @@ export const eventData = [
     date: "2023-08-26",
     eventImageUrl:
       "https://th.bing.com/th?id=OIP.7NKDf_Tn-_On1IPUB8chKAHaES&w=328&h=190&c=8&rs=1&qlt=90&o=6&pid=3.1&rm=2",
-    companyImageUrl: "https://th.bing.com/th/id/OIP.QjynegEfQVPq5kIEuX9fWQHaFj?w=242&h=183&c=7&r=0&o=5&pid=1.7",
+    companyImageUrl:
+      "https://th.bing.com/th/id/OIP.QjynegEfQVPq5kIEuX9fWQHaFj?w=242&h=183&c=7&r=0&o=5&pid=1.7",
   },
   {
     id: 2,
@@ -72,7 +78,8 @@ export const eventData = [
     location: "71 Hayes Point",
     time: "6:03 AM",
     date: "2024-02-22",
-    eventImageUrl: "http://dummyimage.com/100x200.png/ff4444/ffffff",
+    eventImageUrl:
+      "https://th.bing.com/th/id/R.1d3168a7d0e1943f24b5ab056cc0b772?rik=WKX7l1FD2NUE%2bQ&riu=http%3a%2f%2fimages.unsplash.com%2fphoto-1573160059602-81357cdd480f%3fcrop%3dentropy%26cs%3dtinysrgb%26fit%3dmax%26fm%3djpg%26ixid%3dMnwxMjA3fDB8MXxzZWFyY2h8MXx8bG9uZ3x8MHx8fHwxNjI5Mjc2ODUx%26ixlib%3drb-1.2.1%26q%3d80%26w%3d1080&ehk=Fipd%2b%2fjVRQ7QnXCHBVj7n%2fiJxFVBhy9A6R9gcVPWsd0%3d&risl=&pid=ImgRaw&r=0",
     companyImageUrl: "http://dummyimage.com/100x100.png/cc0000/ffffff",
   },
   {

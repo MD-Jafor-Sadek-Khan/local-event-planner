@@ -7,8 +7,9 @@ import {
 } from "./mapCard.styles"
 import { MAPTYPES, mapTypeUrls } from "../Utils/mapType.utils"
 import Map from "../Map/map.component"
+import { Flex } from "antd"
 
-const MapCard = ({ eventDetails:{location, date, time} }) => {
+const MapCard = ({ eventDetails: { location, date, time } }) => {
   const [activeMapUrl, setActiveMapUrl] = useState(
     mapTypeUrls[MAPTYPES.normalView]
   )
@@ -21,22 +22,24 @@ const MapCard = ({ eventDetails:{location, date, time} }) => {
         <Map address={location} activeMapUrl={activeMapUrl} />
         <MapDescriptionContainer>
           <MapDescription
-            title={`Location: ${location}`}
+            title={`${location}`}
             description={`Date: ${date}
-            || Time: ${time}`}
+            || ${time}`}
           />
-          <ButtonContainer
-            onClick={() => handleMapTypeChange(MAPTYPES.sateliteView)}
-            size="large"
-          >
-            Satelite View
-          </ButtonContainer>
-          <ButtonContainer
-            onClick={() => handleMapTypeChange(MAPTYPES.normalView)}
-            size="large"
-          >
-            Normal View
-          </ButtonContainer>
+          <Flex>
+            <ButtonContainer
+              onClick={() => handleMapTypeChange(MAPTYPES.sateliteView)}
+              size="large"
+            >
+              Satelite View
+            </ButtonContainer>
+            <ButtonContainer
+              onClick={() => handleMapTypeChange(MAPTYPES.normalView)}
+              size="large"
+            >
+              Normal View
+            </ButtonContainer>
+          </Flex>
         </MapDescriptionContainer>
       </MapContainerCard>
     </>

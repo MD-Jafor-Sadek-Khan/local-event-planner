@@ -12,6 +12,11 @@ const AntDesignConfig = ({ children }) => {
         borderRadius: 30,
         colorBgContainer: "#5c5c8c",
       },
+      Card: {
+        headerFontSize: 20,
+        lineType: "none",
+        boxShadowTertiary: "inset 0 0 10px 2px rgba(0, 0, 0, 0.2)",
+      },
     },
   }
 

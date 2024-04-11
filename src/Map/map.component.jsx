@@ -1,21 +1,22 @@
 import { useState, useEffect } from "react"
-import { MapContainer, TileLayer } from "react-leaflet"
+import { TileLayer } from "react-leaflet"
 import ControlGeocoder from "../ControlGeocoder/ControlGeocoder.component"
+import { ResponsiveMapContainer } from "./map.styled"
 
 const Map = ({ address, activeMapUrl }) => {
-  const [latLng, setLatLng] = useState({
-    lat: 0.0,
-    lng: 0.0,
+  const [{ latitude, longitude }, setLatLng] = useState({
+    latitude: 0.0,
+    longitude: 0.0,
     isLoaded: false,
   })
 
   useEffect(() => {
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(
-        (position) => {
+        ({ coords: { latitude, longitude } }) => {
           setLatLng({
-            lat: position.coords.latitude,
-            lng: position.coords.longitude,
+            latitude,
+            longitude,
             isLoaded: true,
           })
         },
@@ -28,11 +29,11 @@ const Map = ({ address, activeMapUrl }) => {
 
   return (
     <div id="map">
-      <MapContainer center={[latLng.lat, latLng.lng]} zoom={13}>
+      <ResponsiveMapContainer center={[latitude, longitude]} zoom={13}>
         <TileLayer url={`${activeMapUrl}`} />
 
         <ControlGeocoder address={address} />
-      </MapContainer>
+      </ResponsiveMapContainer>
     </div>
   )
 }

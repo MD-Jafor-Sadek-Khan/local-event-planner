@@ -1,6 +1,8 @@
 import styled from "styled-components"
 import { Card } from "antd"
+import breakPoints from "../../Utils/styled-components/breakPoints"
 
+const { laptop } = breakPoints
 const { Meta } = Card
 
 export const EventItemContainer = styled(Card)`
@@ -8,7 +10,14 @@ export const EventItemContainer = styled(Card)`
   height: 340px;
   border: 0;
   position: relative;
-  
+  border: 15px solid transparent;
+
+  @media (max-width: ${laptop.max}px) {
+    border: 5px solid transparent;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+    margin: 20px 0;
+    border-radius:10px;
+  }
 `
 
 export const BodyContainer = styled.div`
@@ -30,6 +39,7 @@ export const BodyContainer = styled.div`
 export const CoverImageContainer = styled.div`
   height: 200px;
   width: 100%;
+  background-color: transparent;
   border-radius: 15px;
 `
 
@@ -37,7 +47,7 @@ export const CoverImage = styled.img`
   object-fit: cover;
   width: 100%;
   height: 100%;
-  border-radius: 14px;
+  border-radius: 15px;
 `
 export const MetaDetails = styled(Meta)`
   height: 100px;

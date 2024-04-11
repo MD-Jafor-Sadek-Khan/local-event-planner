@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import {eventData} from "../../data"
+import { eventData } from "../../data"
 import EventItemCard from "../eventItemCard/eventItemCard.component"
 import { Row, Col } from "antd"
 import { EventListContainer, PaginationContainer } from "./eventList.styled"
