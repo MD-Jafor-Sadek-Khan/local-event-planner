@@ -5,8 +5,8 @@ import EventItemDetails from "../../Components/eventItemDetails/eventItemDetails
 const Events = () => {
   return (
     <Routes>
-      <Route index element={<EventList/>}/>
-    <Route path=":eventId" element={<EventItemDetails/>}/>
+      <Route index element={<EventList />} />
+      <Route path=":eventId" element={<EventItemDetails />} />
     </Routes>
   )
 }

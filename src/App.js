@@ -7,7 +7,9 @@ import { useDispatch, useSelector } from "react-redux"
 import { setEventsList } from "./store/Events/events.reducer"
 import { selectEventsList } from "./store/Events/events.selector"
 import { eventData } from "./data"
-
+import SignUp from "./Routes/Signup/signUp.route"
+import SignUpForm from "./Components/SignUpForm/signUpForm.component"
+import AgreementPage from "./Components/AgreementPage/agreementPage.component"
 
 function App() {
   const dispatch = useDispatch()
@@ -25,6 +27,9 @@ function App() {
       <Route path="/" element={<Navigation />}>
         <Route index element={<Home />} />
         <Route path="events/*" element={<Events />} />
+      </Route>
+      <Route path="signup" element={<SignUpForm />}>
+        <Route path="agreement" element={<AgreementPage />} />
       </Route>
     </Routes>
   )
